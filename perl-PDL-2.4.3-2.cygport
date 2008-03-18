@@ -1,0 +1,9 @@
+CPAN_AUTHOR=csoe
+inherit perl
+
+src_compile() {
+	lndirs
+	cd ${B}
+	perl_compile
+	${PERL} ${S}/Doc/mkhtmldoc.pl ${B}/blib/lib ${B}/html
+}
