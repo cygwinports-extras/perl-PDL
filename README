@@ -8,18 +8,22 @@ computing. e.g. $a=$b+$c can add two 2048x2048 images in only a fraction
 of a second.
 
 Runtime requirements:
-  cygwin-1.5.25-7
-  fftw-2.1.5-1
-  gsl-1.10-1
-  libgd2-2.0.35-1
-  perl-5.10.0-3
+  cygwin-1.5.25-15
+  gsl-1.12-1
+  libfftw2-2.1.5-2
+  libgd2-2.0.36RC1-1
+  libGL1-7.2-2
+  libGLU1-7.2-2
+  libproj0-4.5.0a-2
+  libX11_6-1.1.5-1
+  perl-5.10.0-5
   perl-Astro-FITS-Header-3.0-1
-  perl-Inline-0.44-3
+  perl-Inline-0.45-1
 
 Build requirements:
 (besides corresponding devel packages)
-  binutils-20060817-1
-  cygport-0.3.9-1
+  binutils-20080624-2
+  cygport-0.4.3-1
   gcc-core-3.4.4-3
   gcc-g77-3.4.4-3
   make-3.81-1
@@ -27,23 +31,23 @@ Build requirements:
 
 Canonical homepage:
   http://pdl.perl.org/
-  http://search.cpan.org/~csoe/PDL/
+  http://search.cpan.org/dist/PDL/
 
 Canonical download:
-  http://www.cpan.org/authors/id/C/CS/CSOE/
+  http://www.cpan.org/authors/id/C/CH/CHM/
 
 -------------------------------------------
 
 Build instructions:
-  unpack perl-PDL-2.4.3-X-src.tar.bz2
+  unpack perl-PDL-2.4.4-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./perl-PDL-2.4.3-X.cygport all
+  cygport ./perl-PDL-2.4.4-X.cygport all
 
 This will create:
-  /usr/src/perl-PDL-2.4.3-X-src.tar.bz2
-  /usr/src/perl-PDL-2.4.3-X.tar.bz2
+  /usr/src/perl-PDL-2.4.4-X-src.tar.bz2
+  /usr/src/perl-PDL-2.4.4-X.tar.bz2
 
 -------------------------------------------
 
@@ -94,6 +98,7 @@ Files included in the binary package:
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Doc.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Doc/Config.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Doc/Perldl.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Doc/scantree.pl
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Exporter.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/FAQ.pod
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/FFT.pm
@@ -105,9 +110,11 @@ Files included in the binary package:
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Fit/Linfit.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Fit/Polynomial.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Func.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/GIS/Proj.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/GSL/DIFF.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/GSL/INTEG.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/GSL/INTERP.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/GSL/MROOT.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/GSL/RNG.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/GSLSF/AIRY.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/GSLSF/BESSEL.pm
@@ -137,7 +144,6 @@ Files included in the binary package:
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/GSLSF/TRANSPORT.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/GSLSF/TRIG.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/GSLSF/ZETA.pm
-  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Gaussian.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/IIS.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/LUT.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/LUT/ramps/equa.fits
@@ -195,11 +201,47 @@ Files included in the binary package:
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/LUT/tables/stairs9.fits
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/LUT/tables/standard.fits
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/Limits.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/OpenGL.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/OpenGLQ.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/PGPLOT.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/PGPLOT/Window.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/PGPLOTOptions.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/State.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/ArcBall.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/ButtonControl.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Contours.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Control3D.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Cube.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/GL.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Geomview.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/GoBoard.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Graph.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/GraphBox.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Image.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Labels.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Lines.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Logo.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/MathGraph.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Mesh.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/OOGL.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Object.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Objects.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Polygonize.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Pyramid.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Quaternion.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Rout.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/SimpleScaler.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Surface.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/TextObjects.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Tk.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/VRML.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/ViewPort.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/TriD/Window.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/VRML.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics/VRML/Protos.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Graphics2D.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/IO/Dicom.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/IO/Dumper.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/IO/FITS.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/IO/FastRaw.pm
@@ -223,6 +265,7 @@ Files included in the binary package:
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Math.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Matrix.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/MatrixOps.pm
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Minuit.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/NiceSlice.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Objects.pod
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Ops.pm
@@ -256,6 +299,7 @@ Files included in the binary package:
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Transform/Cartography/earth_coast.vec.fits
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Transform/Cartography/earth_day.jpg
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Transform/Cartography/earth_night.jpg
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Transform/Proj4.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Types.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Ufunc.pm
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/PDL/Version.pm
@@ -271,9 +315,11 @@ Files included in the binary package:
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/FFT/FFT.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/FFTW/FFTW.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Fit/Gaussian/Gaussian.dll
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/GIS/Proj/Proj.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/GSL/DIFF/DIFF.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/GSL/INTEG/INTEG.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/GSL/INTERP/INTERP.dll
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/GSL/MROOT/MROOT.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/GSL/RNG/RNG.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/GSLSF/AIRY/AIRY.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/GSLSF/BESSEL/BESSEL.dll
@@ -304,7 +350,10 @@ Files included in the binary package:
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/GSLSF/TRIG/TRIG.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/GSLSF/ZETA/ZETA.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Graphics/IIS/IIS.dll
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Graphics/OpenGL/OpenGL.dll
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Graphics/OpenGLQ/OpenGLQ.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Graphics/PGPLOT/Window/Window.dll
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Graphics/TriD/Rout/Rout.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/IO/GD/GD.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/IO/Misc/Misc.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/IO/Pnm/Pnm.dll
@@ -314,25 +363,28 @@ Files included in the binary package:
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/ImageRGB/ImageRGB.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Math/Math.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/MatrixOps/MatrixOps.dll
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Minuit/Minuit.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Ops/Ops.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Primitive/Primitive.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Slatec/Slatec.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Slices/Slices.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Tests/Tests.dll
+  /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Transform/Proj4/Proj4.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Transform/Transform.dll
   /usr/lib/perl5/vendor_perl/5.10/i686-cygwin/auto/PDL/Ufunc/Ufunc.dll
-  /usr/share/doc/perl-PDL-2.4.3/BUGS
-  /usr/share/doc/perl-PDL-2.4.3/COPYING
-  /usr/share/doc/perl-PDL-2.4.3/Changes
-  /usr/share/doc/perl-PDL-2.4.3/INSTALL
-  /usr/share/doc/perl-PDL-2.4.3/README
-  /usr/share/doc/perl-PDL-2.4.3/TODO
-  /usr/share/man/man1/pdldoc.1.gz
-  /usr/share/man/man1/perldl.1.gz
+  /usr/share/doc/perl-PDL-2.4.4/BUGS
+  /usr/share/doc/perl-PDL-2.4.4/COPYING
+  /usr/share/doc/perl-PDL-2.4.4/Changes
+  /usr/share/doc/perl-PDL-2.4.4/INSTALL
+  /usr/share/doc/perl-PDL-2.4.4/README
+  /usr/share/doc/perl-PDL-2.4.4/TODO
 
 ------------------
 
 Port Notes:
+
+----- version 2.4.4-1 -----
+Version bump.
 
 ----- version 2.4.3-2 -----
 Rebuilt for perl-5.10.

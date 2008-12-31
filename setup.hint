@@ -1,5 +1,5 @@
-category: Perl
-requires: cygwin fftw gsl libgd2 perl perl-Astro-FITS-Header perl-Inline
+category: Perl Science
+requires: cygwin libfftw2 gsl libgd2 libGL1 libGLU1 libproj0 libX11_6 perl perl-Astro-FITS-Header perl-Inline
 sdesc: "Perl Data Language module"
 ldesc: "The perlDL project aims to turn perl into an efficient numerical
 language for scientific computing. The PDL module gives standard perl

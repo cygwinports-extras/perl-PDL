@@ -1,0 +1,39 @@
+--- origsrc/PDL-2.4.4/Graphics/TriD/OpenGL/opengl.pd	2008-11-12 22:13:57.000000000 -0600
++++ src/PDL-2.4.4/Graphics/TriD/OpenGL/opengl.pd	2008-12-31 01:46:59.909375000 -0600
+@@ -55,7 +55,7 @@
+ 			  "D=s@" => \@defines );
+ #
+ my @funcs = qw|gl.h glx.h glu.h|;
+-my @types = qw|X.h gl.h glx.h glu.h glxtokens.h|;
++my @types = qw|X.h gl.h glx.h glu.h glext.h glxtokens.h|;
+ my $verbose = 1;
+ my $pmdocs;
+ #
+@@ -84,7 +84,12 @@
+ 
+ # This next seems to be important to keep some extraneous mesa debugging definitions
+ # from being caught.  Blech.
++push(@defines,"-DGL_ATI_blend_equation_separate=0");
+ push(@defines,"-DGL_MESA_program_debug=0");
++push(@defines,"-DGL_MESA_shader_debug=0");
++push(@defines,"-DGLX_ARB_render_texture=0");
++push(@defines,"-DGLX_MESA_swap_control=0");
++push(@defines,"-DGLX_MESA_swap_frame_usage=0");
+ 
+ 
+ 
+--- origsrc/PDL-2.4.4/perldl.conf	2008-11-12 22:14:03.000000000 -0600
++++ src/PDL-2.4.4/perldl.conf	2008-12-31 01:24:36.550000000 -0600
+@@ -105,9 +105,9 @@
+ # 
+ # For SGI GL
+ #
+-#	OPENGL_LIBS => '-lGL -lGLU -lXext -lX11',
+-#	OPENGL_INC => '',
+-#	OPENGL_DEFINE => '',
++	OPENGL_LIBS => '-lGL -lGLU -lXext -lX11',
++	OPENGL_INC => '-I/usr/include/GL/',
++	OPENGL_DEFINE => '',
+ #
+ # Let perl try to figure it out
+ #	OPENGL_LIBS => undef,

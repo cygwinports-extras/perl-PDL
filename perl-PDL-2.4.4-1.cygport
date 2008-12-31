@@ -1,0 +1,12 @@
+CPAN_AUTHOR=chm
+inherit perl
+
+PATCH_URI="2.4.4-opengl.patch"
+
+src_install() {
+	cd ${B}
+	perl_install
+
+	insinto ${PERL_VENDORARCH}/PDL/Doc
+	doins ${S}/Doc/scantree.pl
+}
