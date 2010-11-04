@@ -1,5 +1,5 @@
 category: Perl Science
-requires: gsl libfftw2 libgcc1 libgd2 libgfortran3 libGL1 libproj1 perl perl-Astro-FITS-Header perl-Inline perl-OpenGL
+requires: gsl libfftw2 libgcc1 libgd2 libgfortran3 libGL1 libproj1 libssp0 perl perl-Astro-FITS-Header perl-Inline perl-OpenGL
 sdesc: "Perl Data Language module"
 ldesc: "The perlDL project aims to turn perl into an efficient numerical
 language for scientific computing. The PDL module gives standard perl
