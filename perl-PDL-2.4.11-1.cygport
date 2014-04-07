@@ -1,6 +1,0 @@
-CPAN_AUTHOR=chm
-inherit perl
-
-
-PATCH_URI="2.4.11-cygwin.patch
-           2.4.11-pdlconf.patch"
