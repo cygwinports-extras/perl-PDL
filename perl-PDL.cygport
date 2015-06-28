@@ -2,8 +2,8 @@ CPAN_AUTHOR=chm
 inherit perl
 
 NAME="perl-PDL"
-VERSION=2.007
-RELEASE=2
+VERSION=2.012
+RELEASE=1
 CATEGORY="Perl"
 SUMMARY="Perl Data Language module"
 DESCRIPTION="The perlDL project aims to turn perl into an efficient numerical
@@ -12,4 +12,9 @@ ability to COMPACTLY store and SPEEDILY manipulate the large N-dimensional
 data sets which are the bread and butter of scientific computing. e.g.
 \$a=\$b+\$c can add two 2048x2048 images in only a fraction of a second."
 
-PATCH_URI="2.007-cygwin.patch"
+src_install() {
+	cd ${B}
+	cygmake pure_install DESTDIR=${D}
+	perl -Mblib Doc/scantree.pl ${D}${PERL_VENDORARCH}
+	sed -i -e "s|${D}||g" ${D}${PERL_VENDORARCH}/PDL/pdldoc.db
+}
